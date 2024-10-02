@@ -2,6 +2,7 @@
   "name": "som-avenida",
   "version": "0.1.0",
   "private": true,
+  "license": "proprietary",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
