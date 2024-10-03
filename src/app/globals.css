@@ -5,22 +5,32 @@
 :root {
   --white-base: #ffffff;
   --black-base: #000000;
-  --base: #22489D;
+  --base: #135ec2;
   --secondary: #57D0EA;
   --my-light-black: #1A1D22;
+  --my-black-gray: #2d2d2d;
+  --my-light-gray: #b3b3b3;
+  --my-white: #F0F0F0;
   --my-orange: #FF6B35;
-  --my-gray: #F0F0F0;
+  
+  --range-input: #7c8d91;
+  --selected-color: #135ec2;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --white-base: #ffffff;
     --black-base: #000000;
-    --base: #22489D;
+    --base: #135ec2;
     --secondary: #57D0EA;
     --my-light-black: #1A1D22;
+    --my-black-gray: #2d2d2d;
+    --my-light-gray: #b3b3b3;
+    --my-white: #F0F0F0;
     --my-orange: #FF6B35;
-    --my-gray: #F0F0F0;
+
+    --range-input: #7c8d91;
+    --selected-color: #135ec2;
   }
 }
 
@@ -33,4 +43,25 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .bg-range-input {
+    background-color: var(--range-input);
+  }
+}
+
+.range-input {
+  background: linear-gradient(to right, var(--base) 0%, var(--base) var(--value), rgba(255, 255, 255, 0.05) var(--value), rgba(255, 255, 255, 0.05) 100%);
+}
+
+.range-input::-webkit-slider-thumb {
+  @apply size-4 rounded-full bg-base cursor-pointer; /* Chrome, Safari, etc...*/
+  -webkit-appearance: none;
+}
+
+.range-input::-moz-range-thumb {
+  @apply size-4 rounded-full bg-base cursor-pointer; /* Firefox */
+}
+
+.range-input::-ms-thumb {
+  @apply size-4 rounded-full bg-base cursor-pointer; /* IE */
 }

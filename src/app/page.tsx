@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main>
-      <h1>Som Avenida</h1>
+      <h1></h1>
     </main>
   );
 }
