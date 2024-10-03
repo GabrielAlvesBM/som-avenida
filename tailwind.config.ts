@@ -23,6 +23,9 @@ const config: Config = {
         rangeInput: "var(--range-input)",
         selectedColor: "var(--selected-color)",
       },
+      screens: {
+        'custom-500': '500px',
+      },
     },
   },
   plugins: [],

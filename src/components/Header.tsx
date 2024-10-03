@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
     const [volume, setVolume] = useState<number>(50);
@@ -11,8 +12,8 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-blackBase p-[5px]">
-            <div className='flex items-center justify-between w-[425px] h-[50px] rounded-full bg-myBlackGray'>
+        <header className="flex items-center justify-between bg-blackBase p-[5px]">
+            <div className='flex items-center justify-between max-w-[425px] h-[50px] rounded-full bg-myBlackGray'>
                 <button className='flex items-center justify-center size-[45px] ml-[3px] rounded-full bg-base'>
                     <Image className='text-whiteBase'
                         src="/svgs/play.svg"
@@ -22,9 +23,10 @@ const Header = () => {
                     />
                 </button>
 
-                <p className='flex-1 mx-[7.5px] overflow-hidden text-nowrap text-sm text-myLightGray font-light'>Rádio Avenida - Itaperuna com Avenida Cardoso Moreira</p>
+                <p className='hidden flex-1 mx-[7.5px] overflow-hidden text-nowrap text-sm text-myLightGray font-light
+                custom-500:block'>Rádio Avenida - Itaperuna com Avenida Cardoso Moreira</p>
 
-                <div className='flex items-center gap-[2px]'>
+                <div className='flex flex-1 items-center gap-[2px] ml-2 custom-500:flex-none custom-500:ml-0'>
                     <Image className='text-whiteBase cursor-pointer'
                         src="/svgs/volume.svg"
                         alt='Volume Control'
@@ -42,6 +44,17 @@ const Header = () => {
                         } as React.CSSProperties}
                     />
                 </div>   
+            </div>
+
+            <div className='min-w-[30px] mr-[10px]'>
+                <Link href="https://www.instagram.com/somavenidaitaperuna/" target='_blank' title='Instagram'>
+                    <Image 
+                        src="/svgs/icon-insta30.svg"
+                        alt='Instagram Icon'
+                        width={30}
+                        height={30}
+                    />
+                </Link>
             </div>
         </header>
     );
