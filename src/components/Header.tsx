@@ -48,7 +48,7 @@ const Header = () => {
 
             <div className='min-w-[30px] mr-[10px]'>
                 <Link href="https://www.instagram.com/somavenidaitaperuna/" target='_blank' title='Instagram'>
-                    <Image 
+                    <Image className='hover:scale-105'
                         src="/svgs/icon-insta30.svg"
                         alt='Instagram Icon'
                         width={30}
