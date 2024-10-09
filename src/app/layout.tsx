@@ -22,7 +22,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${roboto.className} cursor-default selection:bg-selectedColor`}>
         <Header />
-        {children}
+        <main className='flex flex-col justify-between m-5 md:flex-row'>
+          {children}
+        </main>        
       </body>
     </html>
   );

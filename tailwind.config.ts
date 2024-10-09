@@ -22,6 +22,7 @@ const config: Config = {
         myOrange: "var(--my-orange)",
         rangeInput: "var(--range-input)",
         selectedColor: "var(--selected-color)",
+        adsBg: "var(--ads-bg)",
       },
       screens: {
         'custom-500': '500px',

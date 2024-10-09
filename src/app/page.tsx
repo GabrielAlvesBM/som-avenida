@@ -1,7 +1,16 @@
+import AdsRight from '../components/AdsRight';
+import AdsTop from '../components/AdsTop';
+
 export default function Home() {
   return (
-    <main>
+    <>
+      <section className='flex flex-col items-center'>
+      <AdsTop />
       <h1></h1>
-    </main>
+      </section>
+      <section>
+        <AdsRight />
+      </section>
+    </>
   );
 }
