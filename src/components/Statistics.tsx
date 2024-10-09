@@ -2,7 +2,7 @@ import { Montserrat } from 'next/font/google'
 
 const montserrat = Montserrat({
     subsets: ['latin'],
-    weight: ['300', '400'],
+    weight: ['400', '500'],
 });
 
 const Statistics = () => {
@@ -11,11 +11,11 @@ const Statistics = () => {
         sm:flex-row sm:h-[175px] md:max-w-[550px]">
             <article className="flex flex-col justify-center items-center gap-3 md:mb-4">
                 <h2 className={`${montserrat.className} text-[20px]`}>Visitantes:</h2>
-                <p className='text-base'>19.455</p>
+                <p className={`${montserrat.className} text-base font-medium`}>19.455</p>
             </article>
             <article className="flex flex-col justify-center items-center gap-3 md:mb-4">
                 <h2 className={`${montserrat.className} text-[20px]`}>Online Agora:</h2>
-                <p className='text-base'>327</p>
+                <p className={`${montserrat.className} text-base font-medium`}>327</p>
             </article>
         </section>
     );
