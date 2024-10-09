@@ -1,5 +1,11 @@
+import { Montserrat } from "next/font/google";
 import Comment from './Comment';
 import CommentSub from '../components/CommentSub';
+
+const montserrat = Montserrat({
+    subsets: ['latin'],
+    weight: ['400']
+});
 
 const Comments = () => {
     const comments = [
@@ -47,6 +53,11 @@ const Comments = () => {
             {commentSub.map((commentSub, index) => (
             <CommentSub key={index} name={commentSub.name} content={commentSub.content} date={commentSub.date} hour={commentSub.hour}/>
                 ))}
+
+            <div className={`${montserrat.className} m-3 text-lg`}>
+                <button className='py-3 px-7 mr-5 mb-3 rounded-[10px] bg-base sm:mb-0'>Comentar</button>
+                <button className='py-3 px-7 rounded-[10px] border border-base'>Ver todos os comentários</button>
+            </div>
         </section>
         
     );
