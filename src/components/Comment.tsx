@@ -2,7 +2,7 @@ import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
     subsets: ['latin'],
-    weight: ['400']
+    weight: ['300', '400']
 });
 
 type CommentProps = {
@@ -22,7 +22,7 @@ export default function Comment({ name, content, date, hour}: CommentProps) {
                     <time id="hour" dateTime={ hour }>{ hour }</time>
                 </span>
             </div>
-            <p id="comment" className="mx-4 pb-7 text-myWhite">{ content }</p>
+            <p id="comment" className="mx-4 pb-7 font-light text-myWhite">{ content }</p>
         </article>
     );
 }

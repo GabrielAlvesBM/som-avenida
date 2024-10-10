@@ -7,8 +7,8 @@ const montserrat = Montserrat({
 
 const Statistics = () => {
     return (
-        <section className="flex flex-col justify-around min-w-[175px] w-full h-[200px] bg-myLightBlack2 
-        sm:flex-row sm:h-[175px] md:max-w-[550px]">
+        <section className="flex flex-col justify-evenly min-w-[175px] w-full h-[200px] bg-myLightBlack2 
+        sm:flex-row sm:h-[175px] md:max-w-[500px]">
             <article className="flex flex-col justify-center items-center gap-3 md:mb-4">
                 <h2 className={`${montserrat.className} text-[20px]`}>Visitantes:</h2>
                 <p className={`${montserrat.className} text-base font-medium`}>19.455</p>

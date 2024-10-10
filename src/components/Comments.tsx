@@ -45,7 +45,7 @@ const Comments = () => {
     ];
 
     return (
-        <section className="w-full max-w-[950px] bg-myLightBlack2">
+        <section className="w-full max-w-[900px] bg-myLightBlack2">
             {comments.map((comment, index) => (
                 <Comment key={index} name={comment.name} content={comment.content} date={comment.date} hour={comment.hour}/>
                 ))}
@@ -54,7 +54,7 @@ const Comments = () => {
             <CommentSub key={index} name={commentSub.name} content={commentSub.content} date={commentSub.date} hour={commentSub.hour}/>
                 ))}
 
-            <div className={`${montserrat.className} m-3 text-lg`}>
+            <div className={`${montserrat.className} m-3`}>
                 <button className='py-3 px-7 mr-5 mb-3 rounded-[10px] bg-base sm:mb-0'>Comentar</button>
                 <button className='py-3 px-7 rounded-[10px] border border-base'>Ver todos os comentários</button>
             </div>
