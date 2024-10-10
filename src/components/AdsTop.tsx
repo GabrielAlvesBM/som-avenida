@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const AdsRight = () => {
     return (
-        <div className="w-full max-w-[1100px] bg-adsBg md:mx-2">
+        <div className="w-full max-w-[1000px] bg-adsBg md:mx-auto">
             <Image className='w-full'
                 src="/images/ads-braseiro.png"
                 alt="Ads Do Braseiro"
