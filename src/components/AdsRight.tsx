@@ -15,7 +15,7 @@ const AdsRight = () => {
                 width={250}
                 height={150}
             />
-            <Image className='col-span-2 mx-auto w-full max-w-[250px] md:max-w-none'
+            <Image className='col-span-2 mx-auto w-full max-w-[250px] md:max-w-none md:col-span-full'
                 src="/images/ads-renovo.jpeg"
                 alt="Ads Do Restaurante Renovo"
                 width={250}

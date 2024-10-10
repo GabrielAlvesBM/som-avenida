@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import Comment from './Comment';
-import CommentSub from '../components/CommentSub';
+import CommentSub from './CommentSub';
+import Link from 'next/link';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -55,8 +56,8 @@ const Comments = () => {
                 ))}
 
             <div className={`${montserrat.className} m-3`}>
-                <button className='py-3 px-7 mr-5 mb-3 rounded-[10px] bg-base sm:mb-0'>Comentar</button>
-                <button className='py-3 px-7 rounded-[10px] border border-base'>Ver todos os comentários</button>
+                <Link href="/comments"><button className='py-3 px-7 mr-5 mb-3 rounded-[10px] bg-base sm:mb-0'>Comentar</button></Link>
+                <Link href="/comments"><button className='py-3 px-7 rounded-[10px] border border-base'>Ver todos os comentários</button></Link>
             </div>
         </section>
         
