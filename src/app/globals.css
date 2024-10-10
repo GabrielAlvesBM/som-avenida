@@ -17,6 +17,7 @@
   --range-input: #7c8d91;
   --selected-color: #135ec2;
   --ads-bg: #2f333a40;
+  --footer: #0c0d0f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,6 +36,7 @@
     --range-input: #7c8d91;
     --selected-color: #135ec2;
     --ads-bg: #2f333a40;
+    --footer-color: #0c0d0f;
   }
 }
 

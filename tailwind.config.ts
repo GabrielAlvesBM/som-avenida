@@ -24,6 +24,7 @@ const config: Config = {
         rangeInput: "var(--range-input)",
         selectedColor: "var(--selected-color)",
         adsBg: "var(--ads-bg)",
+        footerColor: "var(--footer-color)",
       },
       screens: {
         'custom-500': '500px',

@@ -2,6 +2,7 @@ import { Roboto } from 'next/font/google';
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: "Som Avenida",
@@ -25,6 +26,7 @@ export default function RootLayout({
         <main className='flex flex-col justify-between m-5 md:flex-row'>
           {children}
         </main>        
+        <Footer />
       </body>
     </html>
   );
