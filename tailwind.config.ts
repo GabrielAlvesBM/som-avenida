@@ -25,6 +25,7 @@ const config: Config = {
         selectedColor: "var(--selected-color)",
         adsBg: "var(--ads-bg)",
         footerColor: "var(--footer-color)",
+        formInputColor: "var(--form-input)",
       },
       screens: {
         'custom-500': '500px',
