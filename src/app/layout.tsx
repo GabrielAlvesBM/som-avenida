@@ -1,7 +1,7 @@
 import { Roboto } from 'next/font/google';
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from '../components/Header';
+import RadioPlayer from '../components/RadioPlayer';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${roboto.className} cursor-default selection:bg-selectedColor selection:text-white`}>
-        <Header />
+        <RadioPlayer />
         {children}      
         <Footer />
       </body>
