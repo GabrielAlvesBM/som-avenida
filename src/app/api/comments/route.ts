@@ -12,9 +12,8 @@ type CommentType = {
     hour: string;
 };
 
-const dataPath = path.join(process.cwd(), 'src', 'data', 'comments.json');
-
 export async function GET() {
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'comments.json');
     const jsonData = fs.readFileSync(dataPath, 'utf-8');
     const data = JSON.parse(jsonData);
 
@@ -22,6 +21,7 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'comments.json');
     const { name, email, city, state, content }: CommentType = await request.json();
     const now = new Date();
     const date = now.toLocaleDateString('pt-BR');
