@@ -23,7 +23,7 @@ const FormComment = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, content: message }),
+            body: JSON.stringify({ name, email, city, state, content: message }),
         })
 
         if (res.ok) {
