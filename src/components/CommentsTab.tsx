@@ -19,12 +19,12 @@ const Comments = () => {
 
     useEffect(() => {
         const fetchComments = async () => {
-            const res = await fetch('/api/comments');
+            const res = await fetch(`/api/comments?pathname=${pathname}`);
             const data = await res.json();
             setComments(data);
         }
         fetchComments();
-    }, []);
+    }, [pathname]);
 
     return (
         <section className="w-full max-w-[900px] bg-myLightBlack2">

@@ -11,18 +11,18 @@ type CommentType = {
     hour: string;
 };
 
-export async function GET() {
+export async function GET(request: Request) {
     try {
         await client.connect();
+        const url = new URL(request.url);
+
+        const pathname = url.searchParams.get('pathname');
+        const limitComments = pathname !== "/comments";
 
         const dbSomAvenida = client.db("som-avenida");
-        const comments = await dbSomAvenida
-        .collection('comments')
-        .find({})
-        .limit(5)
-        .toArray();
-
-        console.log(comments);
+        const comments = limitComments
+            ? await dbSomAvenida.collection('comments').find({}).limit(5).toArray()
+            : await dbSomAvenida.collection('comments').find({}).toArray();
 
         return NextResponse.json(comments);
     }
