@@ -33,6 +33,8 @@ const FormComment = () => {
             setState('');
             setMessage('');
             alert('Comentário Enviado!');
+
+            window.location.reload();
         } else {
             alert('Falha ao enviar o comentário.');
         }
