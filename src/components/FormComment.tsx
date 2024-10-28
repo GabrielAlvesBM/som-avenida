@@ -57,7 +57,7 @@ const FormComment = () => {
     return (
         <section className="w-full p-3 bg-myLightBlack2 md:max-w-[450px]">
             <form onSubmit={ handleSubmit } className={`${montserrat.className} grid p-3 bg-myLightBlack`} id='formComment'>
-                <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" onLoad={() => setCaptchaLoaded(true)} />
+                <Script src="https://www.google.com/recaptcha/api.js?render=6LflwG4qAAAAAFMkSnRzlQtmP6kB5SWhWkZ6FqoT" strategy="lazyOnload" onLoad={() => setCaptchaLoaded(true)} />
 
                 <div className="mb-3">
                     <label htmlFor="name">Nome:</label>
