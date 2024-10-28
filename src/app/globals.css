@@ -73,3 +73,8 @@ body {
 .range-input::-ms-thumb {
   @apply size-4 rounded-full bg-base cursor-pointer; /* IE */
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+  display: none;
+}
