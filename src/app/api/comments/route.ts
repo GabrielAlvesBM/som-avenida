@@ -11,6 +11,10 @@ type CommentType = {
     hour: string;
 };
 
+interface CommentRequest extends CommentType {
+    recaptchaToken: string;
+}
+
 export async function GET(request: Request) {
     try {
         await client.connect();
@@ -37,8 +41,24 @@ export async function POST(request: Request) {
         await client.connect();
         const dbSomAvenida = client.db("som-avenida");
         const commentsCollection = await dbSomAvenida.collection('comments');
+
+        const { name, email, city, state, content, recaptchaToken}: CommentRequest = await request.json();
+
+        // Verificação do reCAPTCHA
+        const recaptchaResponse = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                secret: process.env.RECAPTCHA_SECRET_KEY || '',
+                response: recaptchaToken
+            })
+        });
+
+        const recaptchaResult = await recaptchaResponse.json();
+        if (!recaptchaResult.success) {
+            return NextResponse.json({ error: "Falha na verificação do reCAPTCHA." }, { status: 401 });
+        }
         
-        const { name, email, city, state, content }: CommentType = await request.json();
         const now = new Date();
         const date = now.toLocaleDateString('pt-BR');
         const hour = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });

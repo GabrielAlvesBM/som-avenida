@@ -2,11 +2,17 @@
 
 import { useState } from 'react';
 import { Montserrat } from "next/font/google";
+import Script from 'next/script';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
     weight: ['400']
 });
+
+declare const grecaptcha: {
+    execute: (sitekey: string, options?: { action: string }) => Promise<string>;
+    ready: (callback: () => void) => void;
+};
 
 const FormComment = () => {
     const [name, setName] = useState('');
@@ -14,16 +20,24 @@ const FormComment = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [message, setMessage] = useState('');
+    const [captchaLoaded, setCaptchaLoaded] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaLoaded) {
+            alert('reCAPTCHA não está carregado.');
+            return;
+        }
+
+        const token = await grecaptcha.execute("6LflwG4qAAAAAFMkSnRzlQtmP6kB5SWhWkZ6FqoT", { action: 'submit' });
 
         const res = await fetch('/api/comments', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, email, city, state, content: message }),
+            body: JSON.stringify({ name, email, city, state, content: message, recaptchaToken: token }),
         })
 
         if (res.ok) {
@@ -42,7 +56,9 @@ const FormComment = () => {
  
     return (
         <section className="w-full p-3 bg-myLightBlack2 md:max-w-[450px]">
-            <form onSubmit={ handleSubmit } className={`${montserrat.className} grid p-3 bg-myLightBlack`}>
+            <form onSubmit={ handleSubmit } className={`${montserrat.className} grid p-3 bg-myLightBlack`} id='formComment'>
+                <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" onLoad={() => setCaptchaLoaded(true)} />
+
                 <div className="mb-3">
                     <label htmlFor="name">Nome:</label>
                     <input type="text" name="name" id="name" minLength={3} maxLength={30} required 
