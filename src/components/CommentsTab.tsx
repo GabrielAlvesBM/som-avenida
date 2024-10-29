@@ -21,7 +21,12 @@ const Comments = () => {
         const fetchComments = async () => {
             const res = await fetch(`/api/comments?pathname=${pathname}`);
             const data = await res.json();
-            setComments(data);
+
+            if (Array.isArray(data)) {
+                setComments(data);
+            } else {
+                console.error('Expected an array of comments:', data);
+            }
         }
         fetchComments();
     }, [pathname]);
