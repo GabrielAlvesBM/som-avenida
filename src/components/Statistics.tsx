@@ -20,24 +20,23 @@ const Statistics = () => {
             });
         }
         
-        const registervisit = async () => {
-            const hasVisited = sessionStorage.getItem('hasVisited');
-
-            if (!hasVisited) {
-                fetch('/api/visitors', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({}),
-                });
-    
-                sessionStorage.setItem('hasVisited', 'true');
-            }
+        const registerVisit = async () => {
+            fetch('/api/visitors', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({}),
+            });
         }
         
         fetchVisitors();
-        registervisit();
+
+        const timer = setTimeout(() => {
+            registerVisit();
+        }, 100);
+
+        return () => clearTimeout(timer);
     }, []);
 
     return (
