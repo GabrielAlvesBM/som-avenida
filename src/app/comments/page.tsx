@@ -4,7 +4,7 @@ import FormComment from '../../components/FormComment';
 
 export default function Comments() {
     return (
-        <main className='flex flex-col justify-between m-5'>
+        <main className='flex flex-col justify-between m-5 mt-[80px]'>
         <section className='mb-2'>
             <AdsTop />
         </section>

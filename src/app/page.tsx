@@ -5,7 +5,7 @@ import CommentsTab from '../components/CommentsTab';
 
 export default function Home() {
   return (
-    <main className='flex flex-col justify-between m-5 md:flex-row'>
+    <main className='flex flex-col justify-between m-5 mt-[80px] md:flex-row'>
       <section className='flex flex-col items-center gap-5 w-full'>
       <AdsTop />
       <Statistics />
