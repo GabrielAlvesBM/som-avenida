@@ -46,10 +46,6 @@ const Statistics = () => {
                 <h2 className={`${montserrat.className} text-[20px]`}>Visitantes:</h2>
                 <p className={`${montserrat.className} text-base font-medium`}>{ totalVisitors }</p>
             </article>
-            <article className="flex flex-col justify-center items-center gap-3 md:mb-4">
-                <h2 className={`${montserrat.className} text-[20px]`}>Online Agora:</h2>
-                <p className={`${montserrat.className} text-base font-medium`}>327</p>
-            </article>
         </section>
     );
 };
