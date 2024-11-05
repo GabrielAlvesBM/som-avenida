@@ -29,6 +29,7 @@ const config: Config = {
       },
       screens: {
         'custom-500': '500px',
+        'custom-375': '375px',
       },
     },
   },

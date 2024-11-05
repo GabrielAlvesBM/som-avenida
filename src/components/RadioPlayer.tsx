@@ -9,12 +9,20 @@ const RadioPlayer = () => {
                 allow="autoplay" 
             ></iframe>
 
-            <div className='min-w-[30px] mr-[10px]'>
-                <Link href="https://www.instagram.com/somavenidaitaperuna/" target='_blank' title='Instagram'>
+            <div className='flex items-center gap-1 min-w-[30px] mr-[10px] -translate-x-4 custom-375:translate-x-0'>
+                <Link className='min-w-[25px]' href="https://www.instagram.com/somavenidaitaperuna/" target='_blank' title='Instagram'>
                     <Image className='hover:scale-105'
                         src="/svgs/icon-insta30.svg"
                         alt='Instagram Icon'
                         width={30}
+                        height={30}
+                    />
+                </Link>
+                <Link className='min-w-[25px]' href="https://api.whatsapp.com/send/?phone=5522992131751&text&type=phone_number&app_absent=0" target='_blank' title='Instagram'>
+                    <Image className='hover:scale-105'
+                        src="/svgs/icon-whatsapp.svg"
+                        alt='Instagram Icon'
+                        width={26}
                         height={30}
                     />
                 </Link>
