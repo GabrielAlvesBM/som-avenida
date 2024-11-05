@@ -2,14 +2,21 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AdsTop = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const images = [
-        '/images/ads-braseiro.png',
-        '/images/ads-paguemenos.jpg',
-    ];
+        {
+          image: '/images/ads-braseiro.png',
+          url: 'https://lojasbraseiro.com.br'
+        },
+        {
+          image: '/images/ads-paguemenos.jpg',
+          url: 'https://www.instagram.com/lojaopaguemenosbhitaperuna/'
+        }
+      ];
 
     const showImage = (index: number) => {
         if (index >= images.length) {
@@ -31,14 +38,16 @@ const AdsTop = () => {
 
             <div className="flex transition-transform ease-out duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {images.map((src, index) => (
-                <div className="min-w-full" key={index}>
-                    <Image className='w-full rounded-xl'
-                        src={src} 
-                        alt={`Imagem ${index + 1}`} 
-                        width={1000}
-                        height={250}
-                    />
-                </div>
+                  <Link className="min-w-full" href={src.url} target='_blank' key={index}>
+                    <div className="min-w-full" key={index}>
+                        <Image className='w-full rounded-xl'
+                            src={src.image} 
+                            alt={`Imagem ${index + 1}`} 
+                            width={1000}
+                            height={250}
+                        />
+                    </div>
+                  </Link>
                 ))}
             </div>
 
