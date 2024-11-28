@@ -4,7 +4,7 @@ if (!process.env.MONGODB_URI) {
     throw new Error("MONGODB Connection string not defined");
 }
 
-const uri = process.env.MONGODB_URI || "mongodb+srv://loks:wrYir1XVdFCvCGEC@starwars.6gus4.mongodb.net/?retryWrites=true&w=majority&appName=starwars";
+const uri = process.env.MONGODB_URI || "mongodb+srv://loks:<password>@starwars.6gus4.mongodb.net/?retryWrites=true&w=majority&appName=starwars";
 const options = {
     serverApi: {
         version: ServerApiVersion.v1,
